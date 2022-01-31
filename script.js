@@ -17,3 +17,37 @@ if (Notification.permission === "granted") {
      });
  }
 
+function submitButton() {
+    alert("thank you for submitting");
+}
+
+let valueCount
+
+document.querySelector(".plus-btn").addEventListener("click", function() {
+  valueCount = document.getElementById("quantity").value;
+  
+  valueCount++;
+  
+  document.getElementById("quantity").value = valueCount;
+
+//   if(valueCount == 1)
+//   {
+//       document.querySelector(".minus-btn")
+//   }
+})
+document.querySelector(".minus-btn").addEventListener("click", function() {
+    valueCount = document.getElementById("quantity").value;
+    
+    valueCount--;
+    
+    document.getElementById("quantity").value = valueCount;
+
+      if(valueCount == 1)
+  {
+    const para = document.createElement("p");
+    const node = document.createTextNode("Inventory is low!");
+    para.appendChild(node);
+    const element = document.getElementById("div1");
+    element.appendChild(para);
+  }
+})
