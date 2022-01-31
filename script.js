@@ -35,6 +35,7 @@ function submitButton() {
     alert("thank you for submitting");
 }
 
+
 let valueCount
 
 document.querySelector(".plus-btn").addEventListener("click", function() {
@@ -44,11 +45,8 @@ document.querySelector(".plus-btn").addEventListener("click", function() {
   
   document.getElementById("quantity").value = valueCount;
 
-//   if(valueCount == 1)
-//   {
-//       document.querySelector(".minus-btn")
-//   }
 })
+
 document.querySelector(".minus-btn").addEventListener("click", function() {
     valueCount = document.getElementById("quantity").value;
     
@@ -57,14 +55,16 @@ document.querySelector(".minus-btn").addEventListener("click", function() {
     document.getElementById("quantity").value = valueCount;
 
       if(valueCount == 1){
-        showAlert();
-      }else if (valueCount === 0)
+        showAlert();{
+        }
+      }else if (valueCount == 0)
   {
     const para = document.createElement("p");
     const node = document.createTextNode("Out of stock");
     para.appendChild(node);
     const element = document.getElementById("div1");
     element.appendChild(para);
+    document.querySelector(".minus-btn").setAttribute("disabled", "diabled")
   }
 })
 
